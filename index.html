@@ -133,6 +133,7 @@
     }
     
     .label.edited { background: #ffa726; }
+    .label.notApplied { background: #ff0000; }
     .label.gray { background: #bbb; }
     
     /* メッセージ */
@@ -688,6 +689,11 @@
           classes.push("applied");
           labels += `<span class="label">申請済み</span>`;
           if (applyInfo.edited) labels += `<span class="label edited">編集済み</span>`;//編集済みアイコンを出したかったが、判定が難しいので保留
+        }
+	    else
+	    {
+	      classes.push("applied");
+	      labels += `<span class="label notApplied">未申請</span>`;
         }
 
         // 申請可能期間外
